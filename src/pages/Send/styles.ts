@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items:center;
   justify-content:center;
   height:90vh;
+  
   img {
     padding-right:25px
   }
@@ -16,4 +17,5 @@ export const Container = styled.div`
     text-align:center;
      text-decoration:underline ${COLORS.primaryOrange};
   }
+ 
 `;

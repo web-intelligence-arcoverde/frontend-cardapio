@@ -33,7 +33,7 @@ function Send() {
           <Button
             variant="contained"
             color="primary"
-            style={{ marginTop: '10px' }}
+            style={{ marginTop: '10px', height: '48px' }}
           >
             Iniciar
           </Button>

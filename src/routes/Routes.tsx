@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import Cardapio from 'src/pages/Cardapio'
+import Cardapio from 'src/pages/Menu'
 import Home from 'src/pages/Home'
 import Send from 'src/pages/Send'
 
