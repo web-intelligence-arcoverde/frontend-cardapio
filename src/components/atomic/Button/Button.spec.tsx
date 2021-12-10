@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import renderer from 'react-test-renderer'
-import { Button } from 'src/components/Button/Button'
+import { Button } from 'src/components/atomic/Button/Button'
 
 describe('Button Component', () => {
   it('should render correcty', () => {
