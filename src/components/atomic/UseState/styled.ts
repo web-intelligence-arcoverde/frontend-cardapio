@@ -12,7 +12,7 @@ padding: 5px;
 `;
 export const UseStateButton = styled.button`
  margin: 0 10px; 
- font-size:20px;
+ font-size:26px;
  background:#fff;
  border:none;
  color:${COLORS.primaryOrange};
