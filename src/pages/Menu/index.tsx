@@ -1,10 +1,12 @@
-import Search from 'src/components/atomic/Search'
+import NavMenu from 'src/components/molecules/NavMenu'
+import Search from 'src/components/molecules/Search'
 import { Container } from './styles'
 
 function Menu() {
   return (
     <Container>
       <Search />
+      <NavMenu />
     </Container>
   )
 }
