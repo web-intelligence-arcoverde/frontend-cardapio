@@ -12,7 +12,7 @@ function Search() {
           <input id="search" type="text" placeholder="Procurar" />
         </Text>
         <div style={{ width: '40px', marginLeft: '10px' }}>
-          <Button img={Enter} />
+          <Button img={Enter} background="white" />
         </div>
       </Card>
     </Container>
