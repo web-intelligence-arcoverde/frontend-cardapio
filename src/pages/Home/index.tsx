@@ -1,16 +1,16 @@
 import Logo from 'assets/icons/logo.svg'
-import { Container } from '../Example/styles'
-import Background from 'assets/images/background1.png'
+import { Container } from 'components/atomic/Container/'
 
-function Home() {
+const Home = () => {
   return (
     <Container
       style={{
-        backgroundImage: `url(${Background})`,
+        height: '100vh',
+        backgroundImage: '#fff',
         backgroundPosition: 'left',
       }}
     >
-      <img src={Logo} />
+      <img src={Logo} alt="logo" />
     </Container>
   )
 }
