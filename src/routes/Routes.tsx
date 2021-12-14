@@ -4,6 +4,8 @@ import Cardapio from 'src/pages/Menu'
 import Home from 'src/pages/Home'
 import Send from 'src/pages/Send'
 import Order from 'src/pages/Order'
+import Dishdescription from 'src/pages/Dishdescription'
+
 
 const Example = lazy(() =>
   import('src/pages/Example/Example').then(module => ({
@@ -24,6 +26,7 @@ export const Routes = () => {
         <Route exact path="/entrar" component={Send} />
         <Route exact path="/cardapio" component={Cardapio} />
         <Route exact path="/order" component={Order}/>
+        <Route exact path="/dishdescription" component={Dishdescription}/>
         <Route path="/404" component={GenericNotFound} />
         <Redirect to="/404" />
       </Switch>
