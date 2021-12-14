@@ -6,6 +6,7 @@ import Cardapio from 'src/pages/Menu'
 
 import Home from 'src/pages/Home'
 import SignIn from 'src/pages/Send'
+import Dishdescription from 'src/pages/Dishdescription'
 
 const GenericNotFound = lazy(() =>
   import('src/pages/GenericNotFound/GenericNotFound').then(module => ({
@@ -24,6 +25,7 @@ export const Routes = () => {
         <Route exact path="/pedidos" component={Order} />
         <Route exact path="/cardapio" component={Cardapio} />
         <Route exact path="/order" component={Order} />
+        <Route exact path="/dishdescription" component={Dishdescription} />
         <Route path="/404" component={GenericNotFound} />
         <Redirect to="/404" />
       </Switch>
