@@ -1,11 +1,11 @@
 import { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import Order from 'src/pages/Order'
-import Cardapio from 'src/pages/Menu'
-
 import Home from 'src/pages/Home'
-import SignIn from 'src/pages/Send'
+import SignIn from 'src/pages/SignIn'
+import Menu from 'src/pages/Menu'
+
+import Order from 'src/pages/Order'
 import Dishdescription from 'src/pages/Dishdescription'
 
 const GenericNotFound = lazy(() =>
@@ -19,11 +19,10 @@ export const Routes = () => {
     <Suspense fallback={<p>Carregando...</p>}>
       <Switch>
         <Route exact path="/" component={Home} />
-
         <Route exact path="/entrar" component={SignIn} />
+        <Route exact path="/cardapio" component={Menu} />
 
         <Route exact path="/pedidos" component={Order} />
-        <Route exact path="/cardapio" component={Cardapio} />
         <Route exact path="/order" component={Order} />
         <Route exact path="/dishdescription" component={Dishdescription} />
         <Route path="/404" component={GenericNotFound} />

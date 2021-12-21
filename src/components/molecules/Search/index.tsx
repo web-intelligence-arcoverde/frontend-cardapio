@@ -1,20 +1,13 @@
-import Lupa from 'assets/icons/lupa.svg'
-import { Card, Text, Container } from './styles'
 import Enter from 'assets/icons/funilverde.svg'
-import Button from '../../atomic/Button'
+import Input from 'src/components/atomic/Input/Icon'
+import Button from 'src/components/atomic/Button'
+
+import { Container } from 'src/components/atomic/Container'
 
 function Search() {
   return (
-    <Container>
-      <Card>
-        <Text>
-          <img id="search" src={Lupa} />
-          <input id="search" type="text" placeholder="Procurar" />
-        </Text>
-        <div style={{ width: '40px', marginLeft: '10px' }}>
-          <Button img={Enter} background="white" />
-        </div>
-      </Card>
+    <Container direction="row" padding={10} style={{ height: '100%' }}>
+      <Input leftIcon="search" />
     </Container>
   )
 }

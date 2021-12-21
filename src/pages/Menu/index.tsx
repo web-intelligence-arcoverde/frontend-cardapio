@@ -2,7 +2,7 @@ import NavMenu from 'components/molecules/NavMenu'
 import Search from 'src/components/molecules/Search'
 import { Container } from './styles'
 
-function Menu() {
+const MenuList = () => {
   return (
     <Container>
       <Search />
@@ -11,4 +11,4 @@ function Menu() {
   )
 }
 
-export default Menu
+export default MenuList
