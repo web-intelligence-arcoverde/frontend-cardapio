@@ -3,17 +3,15 @@ import { Container } from './styled'
 import Lottie from 'react-lottie'
 import animationData from '../../assets/animation/beer.json'
 
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 
 function Home() {
-
-  const history = useHistory();
+  const history = useHistory()
 
   const handleClick = () => {
-    history.push("/entrar");
+    history.push('/entrar')
   }
 
- 
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -21,17 +19,12 @@ function Home() {
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
-  
-    
   }
 
-  const handleAnimationComplete = () =>{
-    console.log("teu cu")
+  const handleAnimationComplete = () => {
+    console.log('teu cu')
   }
 
-  
-
-  
   return (
     <Container>
       <Lottie
@@ -41,13 +34,9 @@ function Home() {
         eventListeners={[
           {
             eventName: 'complete',
-            callback: handleClick
-          }
+            callback: handleClick,
+          },
         ]}
-       
-      
-        
-        
       />
     </Container>
   )
