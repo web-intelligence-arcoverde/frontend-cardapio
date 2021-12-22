@@ -3,6 +3,7 @@ import { TextField, Button } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 import { signInRequest } from 'src/store/action/user.action'
 import { useForm } from 'react-hook-form'
+import BeerLogo from 'src/assets/images/beer.png'
 import { Container } from './styles'
 
 const SignIn = () => {
@@ -12,13 +13,19 @@ const SignIn = () => {
 
   return (
     <Container>
-      <img src={Logo} alt="logo" />
+      <img
+        src={BeerLogo}
+        alt="logo"
+        height="24%"
+        style={{ marginTop: '28px' }}
+      />
 
       <form
         style={{ width: '80%', display: 'flex', flexDirection: 'column' }}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2>Inicie o atendimento</h2>
+        <h2 style={{ marginTop: '20px' }}>Inicie o atendimento</h2>
+
         <TextField
           id="outlined-basic"
           label="Nome"
@@ -27,6 +34,7 @@ const SignIn = () => {
           color="primary"
           required
           {...register('name')}
+          style={{ marginTop: '20px' }}
         />
         <TextField
           id="outlined-basic"

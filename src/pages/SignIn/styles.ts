@@ -5,12 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
-
-  img {
-    padding-right: 25px;
-  }
 
   h2 {
     display: block;
