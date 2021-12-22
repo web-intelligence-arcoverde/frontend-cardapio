@@ -4,7 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Home from 'src/pages/Home'
 import SignIn from 'src/pages/SignIn'
 import Menu from 'src/pages/Menu'
-
+import Dashboard from 'src/pages/Dashboard'
 import Order from 'src/pages/Order'
 import Dishdescription from 'src/pages/Dishdescription'
 
@@ -21,7 +21,7 @@ export const Routes = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/entrar" component={SignIn} />
         <Route exact path="/cardapio" component={Menu} />
-
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/pedidos" component={Order} />
         <Route exact path="/order" component={Order} />
         <Route exact path="/dishdescription" component={Dishdescription} />
