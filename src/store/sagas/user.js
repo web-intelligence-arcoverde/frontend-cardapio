@@ -6,9 +6,9 @@ import api from 'src/service'
 
 export function* signInRequest({ payload }) {
   try {
-    //const { data } = yield call(api.post, 'users/signin', payload)
+    const { data } = yield call(api.post, 'users/register', payload)
 
-    yield put(push('/cardapio'))
+    //yield put(push('/cardapio'))
   } catch (error) {
     console.log(error)
   }
