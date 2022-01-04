@@ -1,21 +1,21 @@
 import Lottie from 'react-lottie'
-import { useRef } from 'react'
 import { useHistory } from 'react-router'
+import { isMobile } from 'react-device-detect'
+import AnimationBeer from 'src/assets/animation/beer.json'
 import { Container } from './styled'
-import AnimationData from '../../assets/animation/beer.json'
 
 const Home = () => {
+  const history = useHistory()
+
   const defaultOptions = {
-    loop: false,
+    loop: !isMobile,
     speed: 200,
     autoplay: true,
-    animationData: AnimationData,
+    animationData: AnimationBeer,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
   }
-
-  const history = useHistory()
 
   return (
     <Container>
@@ -27,7 +27,7 @@ const Home = () => {
           {
             eventName: 'complete',
             callback: () => {
-              history.push('/entrar')
+              if (isMobile) history.push('/entrar')
             },
           },
         ]}

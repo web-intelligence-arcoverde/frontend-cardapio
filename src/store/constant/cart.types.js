@@ -1,0 +1,4 @@
+export const CartTypes = {
+  ADD_CART_REQUEST: 'ADD_CART_REQUEST',
+  ADD_CART_SUCCESS: 'ADD_CART_SUCCESS',
+}

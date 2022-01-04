@@ -1,7 +1,6 @@
-import Logo from 'assets/icons/logo.svg'
 import { TextField, Button } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
-import { signInRequest } from 'src/store/action/user.action'
+import { signInRequest } from 'src/store/action/user.action.js'
 import { useForm } from 'react-hook-form'
 import BeerLogo from 'src/assets/images/beer.png'
 import { Container } from './styles'
