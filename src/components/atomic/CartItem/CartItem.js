@@ -15,9 +15,9 @@ const CartItem = ({ product, isFinish }) => {
         <p>{product.quantity}</p>
         {!isFinish && <button onClick={() => incrementItem(product)}>+</button>}
       </div>
-      <div className={styles.bgImage}>
-        <img src={product.img} alt={product.title} />
-      </div>
+
+      <img src={product.img} alt={product.title} className={styles.bgImage} />
+
       <div className={styles.product}>
         <h4>{product.title}</h4>
         {!isFinish && (

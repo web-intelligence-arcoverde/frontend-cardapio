@@ -10,14 +10,14 @@ export function* getProducts({ payload }) {
     console.log('aqui')
     console.log(payload)
 
-    const response = yield call(
-      fetch(`https://my-json-server.typicode.com/danielmafra/api/${category}`),
+    const json = yield call(() =>
+      fetch(`https://my-json-server.typicode.com/danielmafra/api/${payload}`)
+        .then(response => response.json())
+        .then(myJson => myJson),
     )
-    const json = response.json()
 
     console.log(json)
-
-    getProductSuccess(json)
+    yield put(getProductSuccess(json))
   } catch (error) {
     console.log(error)
   }

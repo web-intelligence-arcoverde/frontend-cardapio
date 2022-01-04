@@ -1,13 +1,20 @@
-import { useNavigate } from 'react-router-dom'
 import CartItem from '../../atomic/CartItem/CartItem'
 import styles from './Cart.module.css'
 
-const Cart = ({ isCheckout }) => {
-  const navigate = useNavigate()
+import { useSelector, useDispatch } from 'react-redux'
 
+import { changerVisibleModalCart } from 'src/store/action/cart.action'
+
+const Cart = ({ isCheckout }) => {
   const cart = []
   const total = 0
-  const openCart = false
+
+  const { openCart, data } = useSelector(state => state.cart)
+  const dispatch = useDispatch()
+
+  console.log(data)
+
+  const handleOpenCart = () => dispatch(changerVisibleModalCart())
 
   return (
     <div
@@ -15,18 +22,17 @@ const Cart = ({ isCheckout }) => {
         openCart ? styles.openCart : styles.closeCart
       }`}
     >
-      {mobile && (
-        <button onClick={handleOpenCart} className={styles.btnCloseCart}>
-          ← Voltar
-        </button>
-      )}
+      <button onClick={handleOpenCart} className={styles.btnCloseCart}>
+        ← Voltar
+      </button>
+
       <h2 className={styles.title}>Seu pedido</h2>
-      {cart.length > 0 ? (
+      {data.length > 0 ? (
         <div className={styles.enterLeft}>
           <div className={styles.items}>
-            {cart.map(item => (
-              <CartItem key={item.id} product={item} />
-            ))}
+            {data.map(item => {
+              return <CartItem key={item.id} product={item} />
+            })}
           </div>
           <div className={styles.total}>
             <h4>Total</h4>

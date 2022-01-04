@@ -5,6 +5,7 @@ import { signInRequest } from './user'
 
 import { ProductTypes } from '../constant/product.types'
 import { getProducts } from './product'
+
 export default function* rootSaga() {
   return yield all([
     takeLatest(UserTypes.SIGN_IN_REQUEST, signInRequest),

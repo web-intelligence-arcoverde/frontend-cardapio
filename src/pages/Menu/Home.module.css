@@ -12,8 +12,7 @@
   }
 }
 
-@media (max-width: 480px){
-
+@media (max-width: 480px) {
   .home {
     flex-direction: column;
     background-color: #ffffff;
@@ -28,8 +27,8 @@
   .btnCart button {
     background-color: #ff2351;
     border: none;
-    max-width: 42px;
-    max-height: 42px;
+    width: 42px;
+    height: 42px;
     padding: 8px;
     border-radius: 50%;
     display: flex;
@@ -59,7 +58,6 @@
     border-radius: 50%;
     bottom: -2px;
     left: -4px;
-    animation: enterBadge .3s forwards;
+    animation: enterBadge 0.3s forwards;
   }
-
 }
