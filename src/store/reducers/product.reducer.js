@@ -17,6 +17,16 @@ export const productReducer = (state = intialState, { type, payload }) => {
         loading: false,
         data: payload,
       }
+
+    case ProductTypes.CHANGER_PRODUCT_SELECT:
+      let indexItem = state.data.map(e => e.id).indexOf(payload)
+      let updatedProduct = [...state.data]
+      updatedProduct[indexItem].isSelected =
+        !updatedProduct[indexItem].isSelected
+      return {
+        ...state,
+        data: updatedProduct,
+      }
     default:
       return state
   }

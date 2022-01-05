@@ -6,13 +6,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { changerVisibleModalCart } from 'src/store/action/cart.action'
 
 const Cart = ({ isCheckout }) => {
-  const cart = []
-  const total = 0
-
-  const { openCart, data } = useSelector(state => state.cart)
+  const { openCart, data, total } = useSelector(state => state.cart)
   const dispatch = useDispatch()
-
-  console.log(data)
 
   const handleOpenCart = () => dispatch(changerVisibleModalCart())
 
@@ -36,7 +31,12 @@ const Cart = ({ isCheckout }) => {
           </div>
           <div className={styles.total}>
             <h4>Total</h4>
-            <h4 className={styles.price}>R$ {total},00</h4>
+            <h4 className={styles.price}>
+              {total.toLocaleString('pt-br', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </h4>
           </div>
           <div className={styles.btn}>
             {!isCheckout ? (

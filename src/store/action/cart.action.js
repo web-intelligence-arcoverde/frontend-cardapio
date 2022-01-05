@@ -19,3 +19,10 @@ export const incrementItemCart = item => {
     payload: item,
   }
 }
+
+export const decrementItemCart = item => {
+  return {
+    type: CartTypes.DECREMENT_ITEM_CART,
+    payload: item,
+  }
+}

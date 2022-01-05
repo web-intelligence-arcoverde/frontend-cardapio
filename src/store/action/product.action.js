@@ -13,3 +13,10 @@ export const getProductSuccess = products => {
     payload: products,
   }
 }
+
+export const changerProductSelected = id => {
+  return {
+    type: ProductTypes.CHANGER_PRODUCT_SELECT,
+    payload: id,
+  }
+}
