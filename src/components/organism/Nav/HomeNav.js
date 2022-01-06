@@ -2,7 +2,7 @@ import styles from './HomeNav.module.css'
 import { ReactComponent as PizzaIcon } from 'src/assets/icons/pizza-icon.svg'
 import { ReactComponent as BurguersIcon } from 'src/assets/icons/burguers-icon.svg'
 import { ReactComponent as CombosIcon } from 'src/assets/icons/combos-icon.svg'
-import { ReactComponent as DessertsIcon } from 'src/assets/icons/desserts-icon.svg'
+
 import { ReactComponent as DrinksIcon } from 'src/assets/icons/drinks-icon.svg'
 
 import { useState } from 'react'

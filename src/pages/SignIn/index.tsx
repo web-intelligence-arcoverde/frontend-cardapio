@@ -3,24 +3,17 @@ import { useDispatch } from 'react-redux'
 import { signInRequest } from 'src/store/action/user.action.js'
 import { useForm } from 'react-hook-form'
 import BeerLogo from 'src/assets/images/beer.png'
-import { useHistory } from 'react-router'
 import { Container } from './styles'
 
 const SignIn = () => {
   const { register, handleSubmit } = useForm()
   const dispatch = useDispatch()
-  const history = useHistory()
 
   const onSubmit = data => dispatch(signInRequest(data))
 
   return (
     <Container>
-      <img
-        src={BeerLogo}
-        alt="logo"
-        height="24%"
-        style={{ marginTop: '28px' }}
-      />
+      <img src={BeerLogo} alt="logo" height="24%" />
 
       <form
         style={{ width: '80%', display: 'flex', flexDirection: 'column' }}
@@ -46,15 +39,6 @@ const SignIn = () => {
           margin="normal"
           required
           {...register('numberTable')}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label="Codigo da mesa"
-          variant="outlined"
-          type="number"
-          margin="normal"
-          {...register('codeTable')}
         />
 
         <Button
