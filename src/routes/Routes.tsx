@@ -11,7 +11,7 @@ const GenericNotFound = lazy(() =>
   })),
 )
 
-export const Routes = () => {
+const Routes = () => {
   return (
     <Suspense fallback={<p>Carregando...</p>}>
       <Switch>
@@ -25,3 +25,5 @@ export const Routes = () => {
     </Suspense>
   )
 }
+
+export default Routes
