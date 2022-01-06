@@ -36,9 +36,8 @@ const Home = () => {
       </div>
       <HomeNav />
 
-      <Switch>
-        <Route path="/cardapio" component={Products} />
-      </Switch>
+      <Products />
+
       <Cart />
     </div>
   )
