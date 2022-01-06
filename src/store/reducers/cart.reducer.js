@@ -3,7 +3,6 @@ import { CartTypes } from '../constant/cart.types'
 const intialState = {
   data: [],
   loading: false,
-
   openCart: false,
   total: 0,
 }

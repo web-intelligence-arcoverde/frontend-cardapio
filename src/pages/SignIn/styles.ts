@@ -11,6 +11,6 @@ export const Container = styled.div`
   h2 {
     display: block;
     text-align: center;
-    text-decoration: underline ${COLORS.primaryOrange};
+    text-decoration: underline ${COLORS.primaryRed};
   }
 `

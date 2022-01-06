@@ -5,7 +5,7 @@ export default createTheme({
   palette: {
     primary: {
       // works
-      main: `${COLORS.primaryOrange}`,
+      main: `${COLORS.primaryRed}`,
       contrastText: '#fff',
     },
     secondary: {

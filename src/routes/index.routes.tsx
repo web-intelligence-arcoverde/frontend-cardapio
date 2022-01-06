@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import Loading from 'src/components/atomic/Loading'
 
 import Home from 'src/pages/Home'
 import SignIn from 'src/pages/SignIn'
@@ -16,9 +17,26 @@ const ListProducts = lazy(() =>
   })),
 )
 
+const ContainerLoading = () => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignContent: 'center',
+        height: '100%',
+        width: '100%',
+      }}
+    >
+      <Loading />
+    </div>
+  )
+}
+
 const Routes = () => {
   return (
-    <Suspense fallback={<p>Carregando...</p>}>
+    <Suspense fallback={<ContainerLoading />}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/entrar" component={SignIn} />

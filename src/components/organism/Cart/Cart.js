@@ -2,11 +2,12 @@ import CartItem from '../../atomic/CartItem/CartItem'
 import styles from './Cart.module.css'
 
 import { useSelector, useDispatch } from 'react-redux'
-
 import { changerVisibleModalCart } from 'src/store/action/cart.action'
+import { createOrderRequest } from 'src/store/action/order.action'
 
 const Cart = ({ isCheckout }) => {
   const { openCart, data, total } = useSelector(state => state.cart)
+  const { user } = useSelector(state => state.user)
   const dispatch = useDispatch()
 
   const handleOpenCart = () => dispatch(changerVisibleModalCart())
@@ -39,7 +40,17 @@ const Cart = ({ isCheckout }) => {
             </h4>
           </div>
           <div className={styles.btn}>
-            {!isCheckout ? <button>Finalizar compra</button> : ''}
+            {!isCheckout ? (
+              <button
+                onClick={() =>
+                  dispatch(createOrderRequest({ data, total, user }))
+                }
+              >
+                Finalizar compra
+              </button>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       ) : (
