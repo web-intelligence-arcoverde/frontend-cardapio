@@ -39,13 +39,7 @@ const Cart = ({ isCheckout }) => {
             </h4>
           </div>
           <div className={styles.btn}>
-            {!isCheckout ? (
-              <button onClick={() => navigate('/checkout')}>
-                Finalizar compra
-              </button>
-            ) : (
-              ''
-            )}
+            {!isCheckout ? <button>Finalizar compra</button> : ''}
           </div>
         </div>
       ) : (

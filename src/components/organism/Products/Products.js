@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import styles from './Products.module.css'
 import ProductItem from 'src/components/atomic/ProductItem/ProductItem'
 
@@ -8,25 +7,18 @@ import { addItemCart } from 'src/store/action/cart.action'
 
 import { useDispatch, useSelector } from 'react-redux'
 
+import Loading from 'src/components/atomic/Loading'
+
 const Products = () => {
-  const { product } = useParams()
   const dispatch = useDispatch()
 
-  const { data, loading } = useSelector(state => state.product)
+  const { data, loading, searchProduct } = useSelector(state => state.product)
 
   useEffect(() => {
-    dispatch(getProductRequest('Burguers'))
-  }, [])
-
-  function addCart(item) {
-    //item.quantity = 1
-    //item.currentPrice = item.price
-    //item.isSelected = true
-    //setCart(oldArray => [...oldArray, item])
-  }
+    dispatch(getProductRequest(searchProduct))
+  }, [searchProduct])
 
   function handleClick(product) {
-    console.log(product)
     const item = {
       quantity: 1,
       currentPrice: product.price,
@@ -40,10 +32,12 @@ const Products = () => {
   return (
     <div className={styles.products}>
       <div className={styles.container}>
-        <h2 className={styles.title}>{product ? product : 'Burguers'}</h2>
+        <h2 className={styles.title}>
+          {searchProduct ? searchProduct : 'Burguers'}
+        </h2>
         <div className={styles.areaProducts}>
           {loading ? (
-            <h2>Carregando</h2>
+            <Loading />
           ) : (
             <>
               {data.map(product => (

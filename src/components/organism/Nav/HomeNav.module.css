@@ -39,8 +39,7 @@
   fill: #000;
 }
 
-@media (max-width: 480px){
-
+@media (max-width: 480px) {
   .nav {
     flex-direction: row;
     position: initial;
@@ -57,12 +56,23 @@
     display: none;
   }
 
-  .nav a {
+  .div {
     min-width: 120px;
     padding: 14px 8px;
     margin: 0px 16px 0px 0px;
     border: 1px solid #dadada;
     border-radius: 8px;
   }
+}
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  padding: 14px 8px;
+  margin: 0px 16px 0px 0px;
+  border: 1px solid #dadada;
+  border-radius: 8px;
 }

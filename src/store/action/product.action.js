@@ -20,3 +20,10 @@ export const changerProductSelected = id => {
     payload: id,
   }
 }
+
+export const changerProductType = type => {
+  return {
+    type: ProductTypes.CHANGER_PRODUCT_TYPE,
+    payload: type,
+  }
+}

@@ -2,6 +2,7 @@ import { ProductTypes } from '../constant/product.types'
 const intialState = {
   data: [],
   loading: false,
+  searchProduct: 'Burguers',
 }
 
 export const productReducer = (state = intialState, { type, payload }) => {
@@ -26,6 +27,12 @@ export const productReducer = (state = intialState, { type, payload }) => {
       return {
         ...state,
         data: updatedProduct,
+      }
+
+    case ProductTypes.CHANGER_PRODUCT_TYPE:
+      return {
+        ...state,
+        searchProduct: payload,
       }
     default:
       return state

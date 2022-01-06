@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom'
 import styles from './HomeNav.module.css'
 import { ReactComponent as PizzaIcon } from 'src/assets/icons/pizza-icon.svg'
 import { ReactComponent as BurguersIcon } from 'src/assets/icons/burguers-icon.svg'
@@ -6,29 +5,82 @@ import { ReactComponent as CombosIcon } from 'src/assets/icons/combos-icon.svg'
 import { ReactComponent as DessertsIcon } from 'src/assets/icons/desserts-icon.svg'
 import { ReactComponent as DrinksIcon } from 'src/assets/icons/drinks-icon.svg'
 
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { changerProductType } from 'src/store/action/product.action'
+
 const HomeNav = () => {
+  const dispatch = useDispatch()
+
+  const changerType = name => {
+    dispatch(changerProductType(name))
+  }
+
+  const [routes, setRoutes] = useState([
+    {
+      id: 1,
+      name: 'Pizza',
+      isActive: false,
+      Icon: <PizzaIcon />,
+    },
+    {
+      id: 2,
+      name: 'Bebidas',
+      isActive: false,
+      Icon: <DrinksIcon />,
+    },
+    {
+      id: 3,
+      name: 'Sobremesas',
+      isActive: false,
+      Icon: <PizzaIcon />,
+    },
+    {
+      id: 4,
+      name: 'Combos',
+      isActive: false,
+      Icon: <CombosIcon />,
+    },
+    {
+      id: 5,
+      name: 'Burguers',
+      isActive: false,
+      Icon: <BurguersIcon />,
+    },
+  ])
+
+  const onClick = id => {
+    let index = routes.map(e => e.id).indexOf(id)
+    let updateRoutes = [...routes]
+
+    //Verificar se tem outro fora o clicado ativado
+    updateRoutes.map(item => {
+      if (item.id !== id && item.isActive) {
+        let searchOtherActive = routes.map(e => e.id).indexOf(item.id)
+        updateRoutes[searchOtherActive].isActive = false
+      }
+    })
+
+    updateRoutes[index].isActive = !updateRoutes[index].isActive
+    setRoutes(updateRoutes)
+  }
+
   return (
     <nav className={styles.nav}>
-      <NavLink to="/cardapio/Pizza" activeClassName={styles.active}>
-        <PizzaIcon />
-        Pizza
-      </NavLink>
-      <NavLink to="/Bebidas" activeClassName={styles.active}>
-        <DrinksIcon />
-        Bebidas
-      </NavLink>
-      <NavLink to="/Sobremesas" activeClassName={styles.active}>
-        <DessertsIcon />
-        Sobremesas
-      </NavLink>
-      <NavLink to="/Combos" activeClassName={styles.active}>
-        <CombosIcon />
-        Combos
-      </NavLink>
-      <NavLink to="/Burguers" activeClassName={styles.active}>
-        <BurguersIcon />
-        Burguers
-      </NavLink>
+      {routes.map(item => {
+        return (
+          <div
+            className={`${styles.container} ${item.isActive && styles.active}`}
+            onClick={() => {
+              onClick(item.id)
+              changerType(item.name)
+            }}
+          >
+            {item.Icon}
+            {item.name}
+          </div>
+        )
+      })}
     </nav>
   )
 }

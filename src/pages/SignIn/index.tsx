@@ -3,11 +3,14 @@ import { useDispatch } from 'react-redux'
 import { signInRequest } from 'src/store/action/user.action.js'
 import { useForm } from 'react-hook-form'
 import BeerLogo from 'src/assets/images/beer.png'
+import { useHistory } from 'react-router'
 import { Container } from './styles'
 
 const SignIn = () => {
   const { register, handleSubmit } = useForm()
   const dispatch = useDispatch()
+  const history = useHistory()
+
   const onSubmit = data => dispatch(signInRequest(data))
 
   return (

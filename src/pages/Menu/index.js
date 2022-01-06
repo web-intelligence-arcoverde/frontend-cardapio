@@ -3,7 +3,7 @@ import Products from 'src/components/organism/Products/Products'
 import Cart from 'src/components/organism/Cart/Cart'
 import ObsItem from 'src/components/atomic/CartObsItem/ObsItem'
 
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import styles from './Home.module.css'
 
@@ -36,10 +36,9 @@ const Home = () => {
       </div>
       <HomeNav />
 
-      <Router>
+      <Switch>
         <Route path="/cardapio" component={Products} />
-        <Route path="/cardapio/:product" component={Products} />
-      </Router>
+      </Switch>
       <Cart />
     </div>
   )
