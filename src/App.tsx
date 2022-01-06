@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import Theme from 'src/constants/theme'
 import { MuiThemeProvider } from '@material-ui/core'
 
-import Routes from 'src/routes/routes'
+import Routes from 'src/routes/index.routes'
 import GlobalStyle from './styles/global'
 import store from './store'
 import history from './routes/history'
