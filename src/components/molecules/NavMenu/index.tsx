@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Bebidas from 'src/components/atomic/Bebidas'
 import Button from 'src/components/atomic/Button/index'
 import Hamburguer from 'src/components/atomic/Hamburguer'
