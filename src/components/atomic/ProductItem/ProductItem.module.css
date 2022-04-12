@@ -1,12 +1,11 @@
 .card {
   background-color: #fff;
   padding: 24px;
-  margin: 42px;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
   cursor: pointer;
-  position: relative;
+  width: 100%;
 }
 
 .card img {
@@ -67,7 +66,7 @@
 .enterLeft {
   opacity: 0;
   transform: translateX(-20px);
-  animation: enterLeft .3s forwards;
+  animation: enterLeft 0.3s forwards;
 }
 
 @keyframes enterLeft {
@@ -77,13 +76,12 @@
   }
 }
 
-@media (max-width: 480px){
-
+@media (max-width: 480px) {
   .card {
     flex-direction: row;
     border-radius: 8px;
     max-width: 90vw;
-    margin: 21px 0px 21px 0px;
+    margin: 6px 0px;
     border: 1px solid #dadada;
   }
 
@@ -93,5 +91,4 @@
     align-self: flex-start;
     max-width: 86px;
   }
-
 }

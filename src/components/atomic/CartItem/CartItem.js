@@ -28,23 +28,42 @@ const CartItem = ({ product, isFinish }) => {
 
       <div className={styles.product}>
         <h4>{product.title}</h4>
-        {!isFinish && (
-          <button onClick={openObsBox}>
-            {product.obs ? product.obs : 'Adicionar observação'}
-          </button>
-        )}
+        <h6 style={{ marginTop: '6px' }}>adicionar descrição</h6>
       </div>
-      <h4 className={styles.price}>
-        {product.currentPrice.toLocaleString('pt-br', {
-          style: 'currency',
-          currency: 'BRL',
-        })}
-      </h4>
 
-      <div className={styles.quantity}>
-        {!isFinish && <button onClick={() => decrementItem(product)}>-</button>}
-        <p>{product.quantity}</p>
-        {!isFinish && <button onClick={() => incrementItem(product)}>+</button>}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <h4 className={styles.price}>
+          {product.currentPrice.toLocaleString('pt-br', {
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </h4>
+
+        <div className={styles.quantity}>
+          {!isFinish && (
+            <button
+              style={{ padding: '4px' }}
+              onClick={() => decrementItem(product)}
+            >
+              -
+            </button>
+          )}
+          <p>{product.quantity}</p>
+          {!isFinish && (
+            <button
+              style={{ padding: '4px' }}
+              onClick={() => incrementItem(product)}
+            >
+              +
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )

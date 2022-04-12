@@ -3,12 +3,16 @@
   border-bottom: 1px solid #dadada;
   padding: 24px 0px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 
 .quantity {
+  margin-top: 6px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .quantity p {
@@ -34,8 +38,6 @@
   width: 81px !important;
   height: 66px;
   padding: 10px 8px;
-  margin-left: 36px;
-  margin-right: 28px;
 }
 
 .product h4 {
@@ -53,7 +55,6 @@
 }
 
 .price {
-  margin-left: 24px;
   font-size: 18px;
   font-weight: 600;
   color: #fdc844;
@@ -77,8 +78,6 @@
     width: 54px;
     height: auto;
     padding: 10px 8px;
-    margin-left: 16px;
-    margin-right: 16px;
   }
 
   .product h4 {

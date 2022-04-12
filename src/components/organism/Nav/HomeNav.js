@@ -1,8 +1,8 @@
 import styles from './HomeNav.module.css'
+
 import { ReactComponent as PizzaIcon } from 'src/assets/icons/pizza-icon.svg'
 import { ReactComponent as BurguersIcon } from 'src/assets/icons/burguers-icon.svg'
 import { ReactComponent as CombosIcon } from 'src/assets/icons/combos-icon.svg'
-
 import { ReactComponent as DrinksIcon } from 'src/assets/icons/drinks-icon.svg'
 
 import { useState } from 'react'
@@ -21,31 +21,31 @@ const HomeNav = () => {
       id: 1,
       name: 'Pizza',
       isActive: false,
-      Icon: <PizzaIcon />,
+      icon: <PizzaIcon />,
     },
     {
       id: 2,
       name: 'Bebidas',
       isActive: false,
-      Icon: <DrinksIcon />,
+      icon: <DrinksIcon />,
     },
     {
       id: 3,
       name: 'Sobremesas',
       isActive: false,
-      Icon: <PizzaIcon />,
+      icon: <PizzaIcon />,
     },
     {
       id: 4,
       name: 'Combos',
       isActive: false,
-      Icon: <CombosIcon />,
+      icon: <CombosIcon />,
     },
     {
       id: 5,
       name: 'Burguers',
       isActive: false,
-      Icon: <BurguersIcon />,
+      icon: <BurguersIcon />,
     },
   ])
 
@@ -76,8 +76,8 @@ const HomeNav = () => {
               changerType(item.name)
             }}
           >
-            {item.Icon}
-            {item.name}
+            {item.icon}
+            <div style={{ marginTop: '10px' }}>{item.name}</div>
           </div>
         )
       })}

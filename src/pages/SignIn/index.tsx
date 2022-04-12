@@ -3,13 +3,16 @@ import { useDispatch } from 'react-redux'
 import { signInRequest } from 'src/store/action/user.action.js'
 import { useForm } from 'react-hook-form'
 import BeerLogo from 'src/assets/images/beer.png'
+import { useHistory } from 'react-router'
 import { Container } from './styles'
 
 const SignIn = () => {
   const { register, handleSubmit } = useForm()
   const dispatch = useDispatch()
 
-  const onSubmit = data => dispatch(signInRequest(data))
+  const history = useHistory()
+
+  const onSubmit = data => history.push('/cardapio')
 
   return (
     <Container>
@@ -23,19 +26,20 @@ const SignIn = () => {
 
         <TextField
           id="outlined-basic"
-          label="Nome"
+          label="Email"
           variant="outlined"
           margin="normal"
           color="primary"
+          type="email"
           required
           {...register('name')}
           style={{ marginTop: '20px' }}
         />
         <TextField
           id="outlined-basic"
-          label="Número da mesa"
+          label="Password"
           variant="outlined"
-          type="number"
+          type="password"
           margin="normal"
           required
           {...register('numberTable')}

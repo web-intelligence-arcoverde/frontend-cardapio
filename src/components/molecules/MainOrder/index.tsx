@@ -86,9 +86,6 @@ const data = [
 ]
 
 const MainOrder: React.FC = () => {
-  const [subTotalValue, setSubTotalValue] = useState(150)
-  const [totalValue, setTotalValue] = useState(200)
-
   const calcValueTotal = () => {
     let total = 0
     data.map(item => {
@@ -96,8 +93,6 @@ const MainOrder: React.FC = () => {
     })
     return total
   }
-
-  console.log(calcValueTotal())
 
   return (
     <Container>
