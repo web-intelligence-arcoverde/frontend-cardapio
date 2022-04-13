@@ -7,6 +7,10 @@ import {
   decrementItemCart,
 } from 'src/store/action/cart.action'
 
+import { Icons } from 'src/assets'
+
+const { Menos, Mais } = Icons
+
 const CartItem = ({ product, isFinish }) => {
   const dispatch = useDispatch()
 
@@ -18,24 +22,33 @@ const CartItem = ({ product, isFinish }) => {
     dispatch(decrementItemCart(product.id))
   }
 
+  console.log(product)
+
   const openObs = false
 
   const openObsBox = () => {}
 
   return (
     <div className={`${styles.item} ${styles.enterLeft}`}>
-      <img src={product.img} alt={product.title} className={styles.bgImage} />
+      <img
+        src={product.img}
+        alt={product.title}
+        className={styles.bgImage}
+        height="100%"
+        width="100%"
+      />
 
       <div className={styles.product}>
         <h4>{product.title}</h4>
-        <h6 style={{ marginTop: '6px' }}>adicionar descrição</h6>
+        <h6>adicionar descrição</h6>
       </div>
 
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-end',
+          justifyContent: 'space-around',
+          alignItems: 'flex-end',
         }}
       >
         <h4 className={styles.price}>
@@ -48,19 +61,37 @@ const CartItem = ({ product, isFinish }) => {
         <div className={styles.quantity}>
           {!isFinish && (
             <button
-              style={{ padding: '4px' }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                background: '#E1E1E1',
+                borderRadius: '4px',
+                height: '36px',
+                width: '36px',
+              }}
               onClick={() => decrementItem(product)}
             >
-              -
+              <Menos />
             </button>
           )}
-          <p>{product.quantity}</p>
+          <p style={{ color: 'rgb(255, 35, 51)' }}>{product.quantity}</p>
           {!isFinish && (
             <button
-              style={{ padding: '4px' }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                background: 'rgb(255, 35, 51)',
+                borderRadius: '4px',
+                height: '36px',
+                width: '36px',
+              }}
               onClick={() => incrementItem(product)}
             >
-              +
+              <Mais />
             </button>
           )}
         </div>
