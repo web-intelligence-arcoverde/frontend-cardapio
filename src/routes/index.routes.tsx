@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Loading from 'src/components/atomic/Loading'
 
-import Home from 'src/pages/Home'
 import SignIn from 'src/pages/SignIn'
 
 const GenericNotFound = lazy(() =>
@@ -11,7 +10,13 @@ const GenericNotFound = lazy(() =>
   })),
 )
 
-const ListProducts = lazy(() =>
+const Home = lazy(() =>
+  import('src/pages/Home/index').then(module => ({
+    default: module.default,
+  })),
+)
+
+const DashboardProducts = lazy(() =>
   import('src/pages/Menu/index').then(module => ({
     default: module.Home,
   })),
@@ -40,7 +45,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/entrar" component={SignIn} />
-        <Route exact path="/cardapio" component={ListProducts} />
+        <Route exact path="/cardapio" component={DashboardProducts} />
 
         <Route path="/404" component={GenericNotFound} />
         <Redirect to="/404" />

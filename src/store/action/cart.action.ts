@@ -6,21 +6,21 @@ export const changerVisibleModalCart = () => {
   }
 }
 
-export const addItemCart = item => {
+export const addItemCart = (item: any) => {
   return {
     type: CartTypes.ADD_ITEM_CART,
     payload: item,
   }
 }
 
-export const incrementItemCart = item => {
+export const incrementItemCart = (item: any) => {
   return {
     type: CartTypes.INCREMENT_ITEM_CART,
     payload: item,
   }
 }
 
-export const decrementItemCart = item => {
+export const decrementItemCart = (item: any) => {
   return {
     type: CartTypes.DECREMENT_ITEM_CART,
     payload: item,

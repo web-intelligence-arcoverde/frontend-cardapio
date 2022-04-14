@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import styles from './Products.module.css'
 import ProductItem from 'src/components/atomic/ProductItem/ProductItem'
 
 import { getProductRequest } from 'src/store/action/product.action'
@@ -8,6 +7,7 @@ import { addItemCart } from 'src/store/action/cart.action'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Loading from 'src/components/atomic/Loading'
+import styles from './Products.module.css'
 
 const Products = () => {
   const dispatch = useDispatch()
@@ -32,9 +32,7 @@ const Products = () => {
   return (
     <div className={styles.products}>
       <div className={styles.container}>
-        <h2 className={styles.title}>
-          {searchProduct ? searchProduct : 'Burguers'}
-        </h2>
+        <h2 className={styles.title}>{searchProduct || 'Burguers'}</h2>
         <div className={styles.areaProducts}>
           {loading ? (
             <Loading />

@@ -5,6 +5,8 @@ import { cartReducer } from './cart.reducer'
 import { productReducer } from './product.reducer'
 import { orderReducer } from './order.reducer'
 
+import { categoryReducer } from './category.reducer'
+
 import { connectRouter } from 'connected-react-router'
 
 const createRootReducer = history =>
@@ -14,5 +16,6 @@ const createRootReducer = history =>
     product: productReducer,
     cart: cartReducer,
     order: orderReducer,
+    category: categoryReducer,
   })
 export default createRootReducer
